@@ -4,15 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e7e7e7"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:hint="@string/enter_note_here"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@id/addBtn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/input"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:text="@string/submit"
+        android:onClick="submitData"
+        android:background="#ffa400"
+        android:textColor="#ffffff"
+        android:id="@+id/addBtn"
+        android:shadowColor="#fff"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addBtn"
+        tools:listitem="@layout/item_note"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
